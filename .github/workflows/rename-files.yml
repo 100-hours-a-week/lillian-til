@@ -15,27 +15,29 @@ jobs:
       - name: Copy and rename template file into respective month folder
         run: |
           DATE=$(date +"%Y-%m-%d")  # Format: YYYY-MM-DD
-          MONTH=$(date +"%b")  # Extract three-letter month (e.g., "Feb")
-          MONTH_NUM=$(date +"%m")  # Extract numerical month (e.g., "02")
+          MONTH_NUM=$(date +"%m")  # Extract two-digit month (e.g., "02")
+          MONTH_SHORT=$(date +"%b")  # Extract three-letter month (e.g., "Feb")
+          MONTH_FOLDER="${MONTH_NUM}-${MONTH_SHORT}"  # Format as "02-Feb"
 
           # Stop creating files from August (08) onward
           if [ "$MONTH_NUM" -ge 08 ]; then
-            echo "Skipping file creation since month is after July ($MONTH)."
+            echo "Skipping file creation since month is after July ($MONTH_FOLDER)."
             exit 0
           fi
 
           # Ensure the folder exists
-          mkdir -p "$MONTH"
+          mkdir -p "$MONTH_FOLDER"
 
           # Copy the template.md file into the correct month folder
-          cp template.md "$MONTH/${DATE}.md"
+          cp template.md "$MONTH_FOLDER/${DATE}.md"
 
       - name: Commit and push changes
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Auto-copied template.md to ${MONTH}/${DATE}.md"
-          git push
-        continue-on-error: true
+          git commit -m "Auto-copied template.md to ${MONTH_FOLDER}/${DATE}.md"
+          git push https://x-access-token:${GH_PAT}@github.com/YOUR_ORG/YOUR_REPOSITORY.git HEAD:main
 
