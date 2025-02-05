@@ -1,0 +1,41 @@
+name: Weekday Auto Copy and Rename Template File (KST Time)
+
+on:
+  schedule:
+    - cron: "15 15 * * 0-4"  # Runs at 00:00 KST (midnight) on Monday to Friday
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  copy_and_rename_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copy and rename template file into respective month folder
+        run: |
+          DATE=$(date +"%Y-%m-%d")  # Format: YYYY-MM-DD
+          MONTH=$(date +"%b")  # Extract three-letter month (e.g., "Feb")
+          MONTH_NUM=$(date +"%m")  # Extract numerical month (e.g., "02")
+
+          # Stop creating files from August (08) onward
+          if [ "$MONTH_NUM" -ge 08 ]; then
+            echo "Skipping file creation since month is after July ($MONTH)."
+            exit 0
+          fi
+
+          # Ensure the folder exists
+          mkdir -p "$MONTH"
+
+          # Copy the template.md file into the correct month folder
+          cp template.md "$MONTH/${DATE}.md"
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Auto-copied template.md to ${MONTH}/${DATE}.md"
+          git push
+        continue-on-error: true
+
