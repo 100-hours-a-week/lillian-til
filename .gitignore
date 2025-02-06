@@ -1,2 +1,9 @@
 .idea
 .DS_Store
+
+# Ignore all markdown files except the template and newly generated files
+*.md
+!template.md
+!*/  # Allow subfolders (e.g., 02-Feb/)
+!*/**.md  # Allow all markdown files inside subfolders (e.g., 02-Feb/2025-02-06.md)
+
