@@ -6,7 +6,7 @@
 
 25.02.04 세부 주제 3 작성 
 
-[25.02.03]((https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-03.md)) 오늘은 Git과 GitHub의 기본 개념을 배우고, 다양한 명령어를 실습했습니다.
+[25.02.03](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-03.md) 오늘은 Git과 GitHub의 기본 개념을 배우고, 다양한 명령어를 실습했습니다.
 
 ### [n월 n째주, n주차] : 간략 주제 작성 
 
