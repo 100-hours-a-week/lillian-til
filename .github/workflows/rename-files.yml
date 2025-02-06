@@ -12,8 +12,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Debug Print Current Directory
+        run: |
+          echo "Current working directory:"
+          pwd
+          echo "Repository contents:"
+          ls -la
+
+      - name: Ensure correct working directory
+        run: |
+          cd /home/runner/work/lillian-til/lillian-til || exit 1
+          echo "Switched to correct directory:"
+          pwd
+
       - name: Copy and rename template file into respective month folder
         run: |
+          cd /home/runner/work/lillian-til/lillian-til  # Ensure correct directory
+
           DATE=$(date +"%Y-%m-%d")  # Format: YYYY-MM-DD
           MONTH_NUM=$(date +"%m")  # Extract two-digit month (e.g., "02")
           MONTH_SHORT=$(date +"%b")  # Extract three-letter month (e.g., "Feb")
@@ -31,16 +46,25 @@ jobs:
           # Copy the template.md file into the correct month folder
           cp template.md "$MONTH_FOLDER/${DATE}.md"
 
+      - name: Debug Verify File Creation
+        run: |
+          echo "Checking if file exists..."
+          ls -la "$MONTH_FOLDER"
+          cat "$MONTH_FOLDER/${DATE}.md" || echo "File not found!"
+
       - name: Commit and push changes
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-        run: |
+        run: |          
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Force Git to track ignored files
-          git add -f "$MONTH_FOLDER/${DATE}.md"
-
-          git commit -m "Auto-copied template.md to ${MONTH_FOLDER}/${DATE}.md"
-          git push https://x-access-token:${GH_PAT}@github.com/100-hours-a-week/lillian-til HEAD:main
-
+          # Check if the file exists before adding
+          if [ -f "$MONTH_FOLDER/${DATE}.md" ]; then
+            git add -f "$MONTH_FOLDER/${DATE}.md"
+            git commit -m "Auto-copied template.md to ${MONTH_FOLDER}/${DATE}.md"
+            git push https://x-access-token:${GH_PAT}@github.com/100-hours-a-week/lillian-til.git HEAD:main
+          else
+            echo "Error: File $MONTH_FOLDER/${DATE}.md does not exist!"
+            exit 1
+          fi
