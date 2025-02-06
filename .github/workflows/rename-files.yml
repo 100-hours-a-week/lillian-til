@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Debug Print Current Directory
+      - name: Debug print current directory
         run: |
           echo "Current working directory:"
           pwd
@@ -21,13 +21,13 @@ jobs:
 
       - name: Ensure correct working directory
         run: |
-          cd /home/runner/work/lillian-til/lillian-til || exit 1
+          cd /home/runner/work/lillian-til || exit 1
           echo "Switched to correct directory:"
           pwd
 
       - name: Copy and rename template file into respective month folder
         run: |
-          cd /home/runner/work/lillian-til/lillian-til  # Ensure correct directory
+          cd /home/runner/work/lillian-til  # Ensure correct directory
 
           DATE=$(date +"%Y-%m-%d")  # Format: YYYY-MM-DD
           MONTH_NUM=$(date +"%m")  # Extract two-digit month (e.g., "02")
@@ -46,7 +46,7 @@ jobs:
           # Copy the template.md file into the correct month folder
           cp template.md "$MONTH_FOLDER/${DATE}.md"
 
-      - name: Debug Verify File Creation
+      - name: Verify file creation
         run: |
           echo "Checking if file exists..."
           ls -la "$MONTH_FOLDER"
@@ -55,7 +55,9 @@ jobs:
       - name: Commit and push changes
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-        run: |          
+        run: |
+          cd /home/runner/work/lillian-til  # Ensure correct directory
+          
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
