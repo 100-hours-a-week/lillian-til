@@ -12,22 +12,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Debug print current directory
+      - name: Print working directory and list files
         run: |
           echo "Current working directory:"
           pwd
           echo "Repository contents:"
-          ls -la
+          ls -R
 
       - name: Ensure correct working directory
         run: |
-          cd /home/runner/work/lillian-til || exit 1
+          cd /home/runner/work/lillian-til/lillian-til || exit 1
           echo "Switched to correct directory:"
           pwd
 
       - name: Copy and rename template file into respective month folder
         run: |
-          cd /home/runner/work/lillian-til  # Ensure correct directory
+          cd /home/runner/work/lillian-til/lillian-til  # Ensure correct directory
 
           DATE=$(date +"%Y-%m-%d")  # Format: YYYY-MM-DD
           MONTH_NUM=$(date +"%m")  # Extract two-digit month (e.g., "02")
@@ -43,8 +43,13 @@ jobs:
           # Ensure the folder exists
           mkdir -p "$MONTH_FOLDER"
 
-          # Copy the template.md file into the correct month folder
-          cp template.md "$MONTH_FOLDER/${DATE}.md"
+          # Verify that template.md exists before copying
+          if [ -f "template.md" ]; then
+            cp template.md "$MONTH_FOLDER/${DATE}.md"
+          else
+            echo "Error: template.md not found!"
+            exit 1
+          fi
 
       - name: Verify file creation
         run: |
@@ -56,7 +61,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          cd /home/runner/work/lillian-til  # Ensure correct directory
+          cd /home/runner/work/lillian-til/lillian-til  # Ensure correct directory
           
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
