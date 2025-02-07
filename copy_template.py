@@ -5,9 +5,8 @@ import subprocess
 
 # Get today's date
 today = datetime.date.today()
-date_str = today.strftime("%Y-%m-%d")  # Format: YYYY-MM-DD
+date_str = today.strftime("%Y-%m-%d")  # Format: 2025-02-07
 month_folder = today.strftime("%m-%b")  # Format: 02-Feb
-readable_date = today.strftime("%y.%m.%d")  # Format: 25.02.07
 
 # Stop creating files after July
 if today.month > 7:
@@ -65,8 +64,8 @@ while first_monday.weekday() != 0:  # Find the first Monday of the month
 # Calculate the current week number in the month (starting from Monday)
 week_number = ((monday_start - first_monday).days // 7) + 1  # Get the correct week number
 
-# Prepare the new line for README.md
-new_readme_entry = f"\n{readable_date} [({date_str})](https://github.com/100-hours-a-week/lillian-til/blob/main/{month_folder}/{date_str}.md) 세부 주제 1 작성\n\n"
+# Prepare the new line for README.md (FIXED: Removed the `yy.mm.dd` part)
+new_readme_entry = f"\n[({date_str})](https://github.com/100-hours-a-week/lillian-til/blob/main/{month_folder}/{date_str}.md) 세부 주제 1 작성\n\n"
 
 # Check the latest existing week section in README
 last_week_number = 1
