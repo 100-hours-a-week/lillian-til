@@ -3,10 +3,11 @@ import shutil
 import datetime
 import subprocess
 
-# Get the current date
+# Get today's date
 today = datetime.date.today()
 date_str = today.strftime("%Y-%m-%d")  # Format: YYYY-MM-DD
 month_folder = today.strftime("%m-%b")  # Format: 02-Feb
+readable_date = today.strftime("%y.%m.%d")  # Format: 25.02.07
 
 # Stop creating files after July
 if today.month > 7:
@@ -18,6 +19,7 @@ repo_root = os.path.dirname(os.path.abspath(__file__))  # Get script's directory
 template_file = os.path.join(repo_root, "template.md")
 month_dir = os.path.join(repo_root, month_folder)
 new_file_path = os.path.join(month_dir, f"{date_str}.md")
+readme_path = os.path.join(repo_root, "README.md")
 
 # Ensure the script runs inside a Git repository
 if not os.path.exists(os.path.join(repo_root, ".git")):
@@ -45,10 +47,59 @@ else:
     print("Error: template.md not found!")
     exit(1)
 
+# Read existing README.md content
+if os.path.exists(readme_path):
+    with open(readme_path, "r", encoding="utf-8") as file:
+        readme_lines = file.readlines()
+else:
+    readme_lines = []
+
+# Determine the start of the current week (Monday)
+monday_start = today - datetime.timedelta(days=today.weekday())  # Move to Monday of the current week
+
+# Find the first Monday of the month
+first_monday = today.replace(day=1)
+while first_monday.weekday() != 0:  # Find the first Monday of the month
+    first_monday += datetime.timedelta(days=1)
+
+# Calculate the current week number in the month (starting from Monday)
+week_number = ((monday_start - first_monday).days // 7) + 1  # Get the correct week number
+
+# Prepare the new line for README.md
+new_readme_entry = f"\n{readable_date} [({date_str})](https://github.com/100-hours-a-week/lillian-til/blob/main/{month_folder}/{date_str}.md) 세부 주제 1 작성\n\n"
+
+# Check the latest existing week section in README
+last_week_number = 1
+header_index = None
+for index, line in enumerate(readme_lines):
+    if line.startswith("### ["):
+        parts = line.split()
+        if len(parts) >= 3:
+            try:
+                last_week_number = int(parts[2][0])  # Extract week number
+                header_index = index
+            except ValueError:
+                continue
+
+# If the last entry is still part of the previous week's section, do not create a new week
+if today.weekday() == 0 and last_week_number < week_number:  # Only create new section on Monday
+    # Insert new week section
+    week_header = f"\n### [{today.month}월 {week_number}째주, {week_number}주차] : 간략 주제 작성\n\n"
+    readme_lines.append(week_header)
+
+# Append new daily entry
+readme_lines.append(new_readme_entry)
+
+# Write updated README.md
+with open(readme_path, "w", encoding="utf-8") as file:
+    file.writelines(readme_lines)
+
+print(f"Updated {readme_path} with new entry.")
+
 # Add, commit, and push changes to GitHub
 try:
-    subprocess.run(["git", "add", "-f", new_file_path], check=True)
-    subprocess.run(["git", "commit", "-m", f"Auto-copied template.md to {month_folder}/{date_str}.md"], check=True)
+    subprocess.run(["git", "add", "-f", new_file_path, readme_path], check=True)
+    subprocess.run(["git", "commit", "-m", f"Updated README and added {month_folder}/{date_str}.md"], check=True)
     subprocess.run(["git", "push"], check=True)
     print("Changes pushed to GitHub successfully.")
 except subprocess.CalledProcessError as e:
