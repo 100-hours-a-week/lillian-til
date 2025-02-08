@@ -5,7 +5,7 @@ import subprocess
 
 # Get today's date
 today = datetime.date.today()
-date_str = today.strftime("%y.%m.%d")  # Format: 2025-02-07
+date_str = today.strftime("%Y-%m-%d")  # Format: 2025-02-07
 month_folder = today.strftime("%m-%b")  # Format: 02-Feb
 
 # Stop creating files after July
