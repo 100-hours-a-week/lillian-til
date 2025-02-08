@@ -12,3 +12,6 @@
 
 [25.02.07](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-07.md) 세부 주제 1 작성
 
+
+[(25.02.08)](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/25.02.08.md) 세부 주제 1 작성
+
