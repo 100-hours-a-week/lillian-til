@@ -63,10 +63,9 @@ while first_monday.weekday() != 0:  # Find the first Monday of the month
     first_monday += datetime.timedelta(days=1)
 
 # Calculate the current week number in the month (starting from Monday)
-week_number = ((monday_start - first_monday).days // 7) + 1  # Get the correct week number
-
-# Prepare the new line for README.md (FIXED: Removed the `yy.mm.dd` part)
-new_readme_entry = f"\n[{title}](https://github.com/100-hours-a-week/lillian-til/blob/main/{month_folder}/{date_str}.md) 세부 주제 1 작성\n\n"
+week_of_month = ((monday_start - first_monday).days // 7) + 1  # 1-based week number
+korean_week_names = ["첫째주", "둘째주", "셋째주", "넷째주", "다섯째주"]
+korean_week_of_month = korean_week_names[week_of_month - 1]
 
 # Check the latest existing week section in README
 last_week_number = 1
@@ -76,18 +75,23 @@ for index, line in enumerate(readme_lines):
         parts = line.split()
         if len(parts) >= 3:
             try:
-                last_week_number = int(parts[2][0])  # Extract week number
+                last_week_number = int(parts[2][0])  # Extract cumulative week number
                 header_index = index
             except ValueError:
                 continue
 
-# If the last entry is still part of the previous week's section, do not create a new week
-if today.weekday() == 0 and last_week_number < week_number:  # Only create new section on Monday
-    # Insert new week section
-    week_header = f"\n### [{today.month}월 {week_number}째주, {week_number}주차] : 간략 주제 작성\n\n"
+# Increment the recording week number (주차) if it's a new week
+recording_week_number = last_week_number
+if today.weekday() == 0 and (header_index is None or last_week_number < week_of_month):
+    recording_week_number += 1
+
+# Add new week section in README on Mondays
+if today.weekday() == 0 and last_week_number < week_of_month:
+    week_header = f"\n### [{today.month}월 {korean_week_of_month}, {recording_week_number}주차] : 간략 주제 작성\n\n"
     readme_lines.append(week_header)
 
 # Append new daily entry
+new_readme_entry = f"\n[{title}](https://github.com/100-hours-a-week/lillian-til/blob/main/{month_folder}/{date_str}.md) 세부 주제 1 작성\n\n"
 readme_lines.append(new_readme_entry)
 
 # Write updated README.md
