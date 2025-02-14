@@ -24,3 +24,6 @@
 
 [25.02.13](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-13.md) SciPy 보충심화 2 - 가설 검정
 
+
+[25.02.14](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-14.md) 세부 주제 1 작성
+
