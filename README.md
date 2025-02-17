@@ -27,3 +27,9 @@
 [25.02.14](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-14.md) 데이터 전처리, 정형/비정형 데이터 처리, SciPy 통계 분석, 시각화, 시계열 분석, 데이터 리모델링의 핵심 개념과 실용적 활용법을 학습했습니다.
 [25.02.15](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-15.md) 세부 주제 1 작성
 
+
+### [2월 셋째주, 2주차] : 간략 주제 작성
+
+
+[25.02.17](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-17.md) 세부 주제 1 작성
+
