@@ -80,10 +80,9 @@ for index, line in enumerate(readme_lines):
             except ValueError:
                 continue
 
-# Increment the recording week number (주차) if it's a new week
-recording_week_number = last_week_number
-if today.weekday() == 0 and (header_index is None or last_week_number < week_of_month):
-    recording_week_number += 1
+# **FIXED: Correct week number calculation**
+iso_year, iso_week, _ = today.isocalendar()  # Get ISO year, week, and weekday
+recording_week_number = max(iso_week - 4, 1)  # Adjust to "week of year - 4" (ensuring it doesn’t go below 1)
 
 # Add new week section in README on Mondays
 if today.weekday() == 0 and last_week_number < week_of_month:
