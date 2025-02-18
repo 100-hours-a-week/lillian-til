@@ -32,3 +32,6 @@
 
 [25.02.17](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-17.md) 미분은 변화율, 경사하강법은 최적화 방법이다
 
+
+[25.02.18](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-18.md) 세부 주제 1 작성
+
