@@ -37,3 +37,6 @@
 
 [25.02.19](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-19.md) 데이터 증강은 모델 성능을 높이며, GAN은 가짜 데이터를 생성합니다.
 
+
+[25.02.20](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-20.md) 세부 주제 1 작성
+
