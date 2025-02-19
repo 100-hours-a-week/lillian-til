@@ -34,3 +34,6 @@
 
 [25.02.18](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-18.md) 머신러닝 딥러닝을 배웠습니다. 
 
+
+[25.02.19](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-19.md) 세부 주제 1 작성
+
