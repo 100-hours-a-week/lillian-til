@@ -40,3 +40,9 @@
 
 [25.02.20](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-20.md) FastAPI로 AI 모델을 연동하고 API 서버를 구축했습니다.
 
+
+### [2월 넷째주, 5주차] : 간략 주제 작성
+
+
+[25.02.24](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-24.md) 세부 주제 1 작성
+
