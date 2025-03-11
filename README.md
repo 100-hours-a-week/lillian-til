@@ -56,24 +56,22 @@
 
 [25.02.28](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-28.md) 해커톤 3일차 회고록
 
-### [3월 첫째주, 6주차] : 간략 주제 작성
+### [3월 첫째주, 6주차] : 딥러닝 기초 2
 
-[25.03.04](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-04.md) 세부 주제 1 작성
+[25.03.04](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-04.md) 전이 학습, ResNet, VGG16, 미세 조정, 특징 추출, 과적합, 성능 비교
 
-[25.03.05](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-05.md) 세부 주제 1 작성
+[25.03.05](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-05.md) 조기 종료, 하이퍼파라미터 튜닝, 모델 최적화 실습.
 
-[25.03.06](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-06.md) 세부 주제 1 작성
+[25.03.06](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-06.md) TensorBoard, CIFAR-10, 최적 모델 선택, 정규화, 모델 튜닝, 코드 복습
 
-[25.03.07](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-07.md) 세부 주제 1 작성
+[25.03.07](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-07.md) 코딩 테스트, 특강(풀스택, 인공지은, 클라우드), 네트워킹
 
-[25.03.08](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-08.md) 세부 주제 1 작성
-
-
-### [3월 둘째주, 7주차] : 간략 주제 작성
+[25.03.08](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-08.md) Streamlit 개념 및 설치, FastAPI 비교, 앱 배포 실습
 
 
-[25.03.10](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-10.md) 세부 주제 1 작성
+### [3월 둘째주, 7주차] : 생성형 AI
 
+[25.03.10](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-10.md) NLP 개념, RNN과 LSTM 비교, Text CNN, GAN, Transformer 모
 
-[25.03.11](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-11.md) 세부 주제 1 작성
+[25.03.11](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-11.md) LangChain 개념, 임베딩 및 유사도 검색, FAISS, RAG
 
