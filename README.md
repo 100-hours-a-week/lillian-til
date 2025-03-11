@@ -28,7 +28,7 @@
 
 [25.02.15](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-15.md) 실수 벡터 공간, 준동형 사상, 선형 변환 학습.
 
-### [2월 셋째주, 4주차] : 간략 주제 작성
+### [2월 셋째주, 4주차] : 머신러닝 기초
 
 [25.02.17](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-17.md) 미분은 변화율, 경사하강법은 최적화 방법이다
 
@@ -40,20 +40,21 @@
 
 [25.02.20](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-20.md) FastAPI로 AI 모델을 연동하고 API 서버를 구축했습니다.
 
-[25.02.21](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-21.md) 세부 주제 1 작성
+[25.02.21](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-21.md) 퍼셉트론, K-NN, 데이터셋 분할, 데이터 증강, PyTorch 연산 및 전처리에 대해 깊이 공부한 날.
 
+[25.02.22](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-22.md) FastAPI를 활용한 서버 개발, AI 모델 서빙, LangChain 기반 확장 기능
 
-### [2월 넷째주, 5주차] : 간략 주제 작성
+### [2월 넷째주, 5주차] : 딥러닝 기초 1 + 해커톤
 
-[25.02.24](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-24.md) 세부 주제 1 작성
+[25.02.24](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-24.md) 신경망, 활성화 함수, 역전파, 최적화, CNN, MLP, 비선형 분류.
 
-[25.02.25](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-25.md) 세부 주제 작성
+[25.02.25](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-25.md) 아이디어톤 회고록
 
-[25.02.26](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-26.md) 세부 주제 작성
+[25.02.26](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-26.md) 조원 모집 및 해커톤 1일차 회고록
 
-[25.02.27](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-27.md) 세부 주제 작성
+[25.02.27](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-27.md) 해커톤 2일차 회고록
 
-[25.02.28](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-28.md) 세부 주제 작성
+[25.02.28](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-28.md) 해커톤 3일차 회고록
 
 ### [3월 첫째주, 6주차] : 간략 주제 작성
 
