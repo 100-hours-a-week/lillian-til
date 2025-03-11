@@ -48,9 +48,9 @@
 
 [25.02.24](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-24.md) 신경망, 활성화 함수, 역전파, 최적화, CNN, MLP, 비선형 분류.
 
-[25.02.25](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-25.md) 아이디어톤 회고록
+[25.02.25](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-25.md) 딥다이브
 
-[25.02.26](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-26.md) 조원 모집 및 해커톤 1일차 회고록
+[25.02.26](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-26.md) 아이디어톤 및 해커톤 1일차 회고록
 
 [25.02.27](https://github.com/100-hours-a-week/lillian-til/blob/main/02-Feb/2025-02-27.md) 해커톤 2일차 회고록
 
