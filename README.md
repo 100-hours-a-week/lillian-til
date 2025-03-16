@@ -75,3 +75,9 @@
 
 [25.03.11](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-11.md) LangChain 개념, 임베딩 및 유사도 검색, FAISS, RAG
 
+
+### [3월 셋째주, 8주차] : 간략 주제 작성
+
+
+[25.03.17](https://github.com/100-hours-a-week/lillian-til/blob/main/03-Mar/2025-03-17.md) 세부 주제 1 작성
+
